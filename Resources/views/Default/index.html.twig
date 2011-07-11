@@ -1,0 +1,32 @@
+{% extends "AcmeDemoBundle::layout.html.twig" %}
+
+{% block title "Symfony - Demos" %}
+
+{% block content_header '' %}
+
+{% block content %}
+    <h2>Products</h2>
+    <table>
+    <caption> Product List</caption>
+    <thead>
+    <tr>
+       <th>Name</th><th>Category</th><th>Price</th>
+       <th colspan="2">Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for product in products %}
+        <tr>
+            <td>{{ product.name }}</td>
+            <td>{{ product.category.name }}</td>
+            <td>{{ product.price }}</td>
+            <td><a href="{{ path('_product_edit', {'id' : product.id}) }}">edit</a>&nbsp|&nbsp</td>
+            <td><a href="{{ path('_product_delete', {'id' : product.id}) }}">delete</a></td>
+        </tr>
+    {% endfor %}
+    </tbody>
+    </table>
+
+
+
+{% endblock %}

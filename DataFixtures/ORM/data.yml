@@ -1,0 +1,33 @@
+#Categories
+
+categories:
+  cat1: {name: 'Category 1'}
+  cat2: {name: 'Category 2'}
+  cat3: {name: 'Category 3'}
+  cat4: {name: 'Category 4'}
+  cat5: {name: 'Category 5'}
+
+
+
+#Products
+
+products:
+  Product 1: {name: 'producto1', price: 5.3, description: 'descripción producto 1', category: cat1}
+  Product 2: {name: 'producto2', price: 9.3, description: 'descripción producto 22', category: cat1}
+  Product 3: {name: 'producto3', price: 3.3, description: 'descripción producto 22', category: cat1}
+  Product 4: {name: 'producto4', price: -0.34, description: 'descripción producto 22', category: cat1}
+  Product 5: {name: 'producto5', price: -5.4, description: 'descripción producto 22', category: cat2}
+  Product 6: {name: 'producto6', price: 3.4, description: 'descripción producto 22', category: cat2}
+  Product 7: {name: 'producto7', price: -8.4, description: 'descripción producto 22', category: cat2}
+  Product 8: {name: 'producto8', price: -5.4, description: 'descripción producto 22', category: cat3}
+  Product 9: {name: 'producto9', price: -5.4, description: 'descripción producto 22', category: cat3}
+  Product 10: {name: 'producto10', price: 6.4, description: 'descripción producto 22', category: cat3}
+  Product 11: {name: 'producto11', price: -5.4, description: 'descripción producto 22', category: cat4}
+  Product 12: {name: 'producto12', price: 1.4, description: 'descripción producto 22', category: cat4}
+  Product 13: {name: 'producto13', price: 0.4, description: 'descripción producto 22', category: cat5}
+  Product 14: {name: 'producto14', price: 6.4, description: 'descripción producto 22', category: cat5}
+
+
+
+
+

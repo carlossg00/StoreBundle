@@ -1,0 +1,16 @@
+{% extends "AcmeDemoBundle::layout.html.twig" %}
+
+{% block title "Symfony - Demos" %}
+
+{% block content_header '' %}
+
+{% block content %}
+    <h1>Form demo</h1>
+
+    <form action="{{ app.request.requestUri }}" method="post" {{ form_enctype(form) }} id="contact_form">
+    {{ form_widget(form) }}
+
+    <input type="submit" value="Send" class="symfony-button-grey" />
+</form>
+
+{% endblock %}

@@ -1,0 +1,53 @@
+<?php
+
+namespace Acme\StoreBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+
+    /**
+        * @ORM\Entity
+        * @ORM\Table(name="product")
+        */
+
+class Product {
+
+    /**
+        * @ORM\Id
+        * @ORM\Column(type="integer")
+        * @ORM\GeneratedValue(strategy="AUTO")
+        */
+
+    protected $id;
+
+    /**
+     * @ORM\Column(type="string", length="100")
+     * @Assert\NotBlank()
+     */
+
+    protected $name;
+
+    /**
+     * @ORM\Column(type="decimal", scale="2")
+     * @Assert\NotBlank()
+     * @Assert\Min(2)
+     */
+
+    protected $price;
+
+    /**
+        * @ORM\Column(type="string")
+        */
+
+    protected $description;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Category", inversedBy="products")
+     * @ORM\JoinColumn(name="category_id", referencedColumnName="id")
+     * @Assert\Type(type="Acme\StoreBundle\Entity\Category")
+     */
+
+    protected $category;
+}
+
+
