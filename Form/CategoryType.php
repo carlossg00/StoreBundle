@@ -17,7 +17,11 @@ class CategoryType extends AbstractType
         return array(
             'data_class' => 'Acme\StoreBundle\Entity\Category'
         );
+    }
 
+    public function getName()
+    {
+        return 'category';
     }
 
 }

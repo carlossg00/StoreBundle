@@ -4,29 +4,28 @@ namespace Acme\StoreBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilder;
+use Acme\StoreBundle\Form\LocationType;
 
-class ProductType extends AbstractType
+class ProviderType extends AbstractType
 {
     public function buildForm(FormBuilder $builder, array $options)
     {
-        $builder->add('category','entity',array('class' => 'Acme\StoreBundle\Entity\Category'));
         $builder->add('name');
-        $builder->add('price','money');
-        $builder->add('city');
-        $builder->add('description','textarea');
+        $builder->add('phone');
+        $builder->add('location',new LocationType());
     }
 
     public function getDefaultOptions(array $options)
     {
         return array(
-            'data_class' => 'Acme\StoreBundle\Entity\Product'
+            'data_class' => 'Acme\StoreBundle\Entity\Provider'
         );
 
     }
 
     public function getName()
     {
-        return 'product';
+        return 'provider';
     }
 
 }

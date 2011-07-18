@@ -1,0 +1,69 @@
+{% extends "AcmeDemoBundle::layout.html.twig" %}
+
+{% block title "Symfony - Demos" %}
+
+{% block js %}
+
+<script type="text/javascript">
+$(document).ready(function(){
+
+    $("#provider_location_community").change( function() {
+        $("#loader").show();
+        $.ajax({
+            type: "GET",
+            data: "data=" + $(this).val(),
+            url:"{{ path('_provinceByCommunity') }}",
+            success: function(msg){
+                if (msg != ''){
+                    $("#provider_location_province").html(msg).show();
+                    $('#provider_location_province option[value=' +
+                        {{ provider.location.province.id is defined ? provider.location.province.id : '' }}
+                     +']').attr("selected","selected");
+                    $("#loader").hide();
+                }
+                else{
+                    $("#provider_location_province").html('<em>No item result</em>');
+                    $("#loader").hide();
+                }
+            }
+        });
+    });
+
+   $("#provider_location_community").trigger('change');
+});
+</script>
+
+{% endblock %}
+
+{% block content_header '' %}
+
+{% block content %}
+    <h1>Form demo</h1>
+
+    <form action="{{ app.request.requestUri }}" method="post" {{ form_enctype(form) }} id="contact_form">
+
+    {{ form_errors(form) }}
+
+    {{ form_row(form.name)}}
+    {{ form_row(form.phone)}}
+    {{ form_row(form.location.community)}}
+    <div>
+        {{ form_label(form.location.province)}}
+        {{ form_widget(form.location.province)}}
+        {{ form_errors(form.location.province)}}
+
+        <img id="loader" src="{{ asset('bundles/acmestore/images/ajax-loader.gif') }}" alt="ajax-loader">
+    </div>
+    {{ form_row(form.location.city)}}
+    {{ form_row(form.location.street)}}
+
+    <input type="submit" value="Send" class="symfony-button-grey" />
+</form>
+
+{% endblock %}
+
+
+
+
+
+

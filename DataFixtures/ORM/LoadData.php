@@ -2,14 +2,17 @@
 
 namespace Acme\StoreBundle\DataFixtures\ORM;
 
-use Doctrine\Common\DataFixtures\FixtureInterface;
+use Doctrine\Common\DataFixtures\AbstractFixture;
+use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
 use Symfony\Component\Yaml\Yaml;
 use Symfony\Component\Finder\Finder;
 use Acme\StoreBundle\Entity\Product;
 use Acme\StoreBundle\Entity\Category;
+use Acme\StoreBundle\Entity\Community;
+use Acme\StoreBundle\Entity\Province;
 
  
-class SomeProducts implements FixtureInterface{
+class SomeProducts extends AbstractFixture implements OrderedFixtureInterface {
 
     public function load($manager)
     {
@@ -42,8 +45,35 @@ class SomeProducts implements FixtureInterface{
             $manager->persist($products[$key]);
         }
 
+        $communities = Array();
+
+        foreach ($loader['communities'] as $key => $community) {
+            $communities[$key] = new Community();
+            $communities[$key]->setName($community['name']);
+
+            $manager->persist($communities[$key]);
+        }
+
+        $provinces = Array();
+
+        foreach ($loader['provinces'] as $key => $province) {
+            $provinces[$key] = new Province();
+            $provinces[$key]->setName($province['name']);
+            $provinces[$key]->setCommunity($communities[$province['community']]);
+
+            $manager->persist($provinces[$key]);
+
+            $this->addReference($key,$provinces[$key]);
+
+        }
+
         $manager->flush();
 
+    }
+
+    public function getOrder()
+    {
+        return 1;
     }
 
 }

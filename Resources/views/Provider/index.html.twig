@@ -1,0 +1,32 @@
+{% extends "AcmeDemoBundle::layout.html.twig" %}
+
+{% block title "Symfony - Demos" %}
+
+{% block content_header '' %}
+
+{% block content %}
+    <h2>Providers</h2>
+    <table>
+    <caption> Provider List</caption>
+    <thead>
+    <tr>
+       <th>Name</th><th>Location</th><th>Phone</th>
+       <th colspan="2">Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for provider in providers %}
+        <tr>
+            <td>{{ provider.name }}</td>
+            <td>{{ provider.location }}</td>
+            <td>{{ provider.phone }}</td>
+            <td><a href="{{ path('_provider_edit', {'id' : provider.id}) }}">edit</a>&nbsp|&nbsp</td>
+            <td><a href="{{ path('_provider_delete', {'id' : provider.id}) }}">delete</a></td>
+        </tr>
+    {% endfor %}
+    </tbody>
+    </table>
+
+
+
+{% endblock %}

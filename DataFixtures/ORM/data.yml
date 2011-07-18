@@ -27,7 +27,131 @@ products:
   Product 13: {name: 'producto13', price: 0.4, description: 'descripción producto 22', category: cat5}
   Product 14: {name: 'producto14', price: 6.4, description: 'descripción producto 22', category: cat5}
 
+communities:
+  community1: {name: 'Galicia'}
+  community2: {name: 'Principado de Asturias'}
+  community3: {name: 'Cantabria'}
+  community4: {name: 'País Vasco'}
+  community5: {name: 'Navarra'}
+  community6: {name: 'La Rioja'}
+  community7: {name: 'Aragón'}
+  community8: {name: 'Cataluña'}
+  community9: {name: 'Castilla y León'}
+  community10: {name: 'Comunidad de Madrid'}
+  community11: {name: 'Extremadura'}
+  community12: {name: 'Castilla-La Mancha'}
+  community13: {name: 'Comunidad Valenciana'}
+  community14: {name: 'Andalucía'}
+  community15: {name: 'Región de Murcia'}
+  community16: {name: 'Islas Baleares'}
+  community17: {name: 'Islas Canarias'}
+  community18: {name: 'Ceuta'}
+  community19: {name: 'Melilla'}
 
 
+provinces:
+  province1: {name: 'Álava', community: community4}
+  province2: {name: 'Alabacete', community: community12}
+  province3: {name: 'Alicante/Alacant', community: community13}
+  province4: {name: 'Almería', community: community14}
+  province5: {name: 'Ávila', community: community9}
+  province6: {name: 'Badajoz', community: community11}
+  province7: {name: 'Balears, Illes', community: community16}
+  province8: {name: 'Barcelona', community: community8}
+  province9: {name: 'Burgos', community: community9}
+  province10: {name: 'Cáceres', community: community11}
+  province11: {name: 'Cádiz', community: community14}
+  province12: {name: 'Castellón/Castelló', community: community13}
+  province13: {name: 'Ciudad Real', community: community12}
+  province14: {name: 'Córdoba', community: community14}
+  province15: {name: 'Coruña, A', community: community1}
+  province16: {name: 'Cuenca', community: community12}
+  province17: {name: 'Girona', community: community8}
+  province18: {name: 'Granada', community: community14}
+  province19: {name: 'Guadalajara', community: community12}
+  province20: {name: 'Guipúzcoa', community: community4}
+  province21: {name: 'Huelva', community: community14}
+  province22: {name: 'Huesca', community: community7}
+  province23: {name: 'Jaén', community: community14}
+  province24: {name: 'León', community: community9}
+  province25: {name: 'Lleida', community: community8}
+  province26: {name: 'Rioja, La', community: community6}
+  province27: {name: 'Lugo', community: community1}
+  province28: {name: 'Madrid', community: community10}
+  province29: {name: 'Málaga', community: community14}
+  province30: {name: 'Murcia', community: community15}
+  province31: {name: 'Navarra', community: community5}
+  province32: {name: 'Ourense', community: community1}
+  province33: {name: 'Asturias', community: community2}
+  province34: {name: 'Palencia', community: community9}
+  province35: {name: 'Palmas, Las', community: community17}
+  province36: {name: 'Pontevedra', community: community1}
+  province37: {name: 'Salamanca', community: community9}
+  province38: {name: 'Santa Cruz de Tenerife', community: community17}
+  province39: {name: 'Cantabria', community: community3}
+  province40: {name: 'Segovia', community: community9}
+  province41: {name: 'Sevilla', community: community14}
+  province42: {name: 'Soria', community: community9}
+  province43: {name: 'Tarragona', community: community8}
+  province44: {name: 'Teruel', community: community7}
+  province45: {name: 'Toledo', community: community12}
+  province46: {name: 'Valencia/València', community: community13}
+  province47: {name: 'Valladolid', community: community9}
+  province48: {name: 'Vizcaya', community: community4}
+  province49: {name: 'Zamora', community: community9}
+  province50: {name: 'Zaragoza', community: community7}
+  province51: {name: 'Ceuta', community: community18}
+  province52: {name: 'Melilla', community: community19}
+
+locations:
+  loc1:
+    province: province10
+    city: 'city 1'
+    street: 'street location 1'
+
+  loc2:
+    province: province20
+    city: 'city 2'
+    street: 'street location 2'
+
+  loc3:
+    province: province30
+    city: 'city 3'
+    street: 'street location 3'
+
+  loc4:
+    province: province40
+    city: 'city 4'
+    street: 'street location 4'
+
+  loc5:
+    province: province50
+    city: 'city 5'
+    street: 'street location 5'
 
 
+providers:
+  provider1:
+    name: 'Provider 1'
+    phone: '555-Provider1'
+    location: loc1
+
+  provider2:
+    name: 'Provider 2'
+    phone: '555-Provider2'
+    location: loc2
+
+  provider3:
+    name: 'Provider 3'
+    phone: '555-Provider3'
+    location: loc3
+
+  provider4:
+    name: 'Provider 4'
+    phone: '555-Provider4'
+    location: loc4
+
+  provider5:
+    name: 'Provider 5'
+    phone: '555-Provider5'
+    location: loc5
