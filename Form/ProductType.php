@@ -12,7 +12,6 @@ class ProductType extends AbstractType
         $builder->add('category','entity',array('class' => 'Acme\StoreBundle\Entity\Category'));
         $builder->add('name');
         $builder->add('price','money');
-        $builder->add('city');
         $builder->add('description','textarea');
     }
 
