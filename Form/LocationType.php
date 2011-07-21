@@ -12,12 +12,19 @@ class LocationType extends AbstractType
         $builder->add('community','entity',array(
                        'class' => 'Acme\StoreBundle\Entity\Community',
                        'property' => 'name'));
-        $builder->add('province','null_entity',array(
+        $builder->add('province','entity',array(
                         'class' => 'Acme\StoreBundle\Entity\Province',
                        'property' => 'name',
                        'required' => false));
         $builder->add('city');
         $builder->add('street');
+    }
+
+    public function getDefaultOptions(array $options)
+    {
+        return array(
+            'data_class' => 'Acme\StoreBundle\Entity\Location'
+        );
     }
 
     public function getName()
