@@ -38,8 +38,8 @@ class Provider
     protected $phone;
 
     /**
-     * @ORM\OneToOne(targetEntity="Location");
-     * @ORM\JoinColumn(name="location_id", referencedColumnName="id") 
+     * @ORM\OneToOne(targetEntity="Location" , cascade={"persist", "remove"} );
+     * @ORM\JoinColumn(name="location_id", referencedColumnName="id")
      */
     protected $location;
 
