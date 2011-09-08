@@ -55,6 +55,8 @@ $(document).ready(function(){
     </div>
     {{ form_row(form.location.city)}}
     {{ form_row(form.location.street)}}
+ 
+    {{ form_rest(form) }}
 
     <input type="submit" value="Send" class="symfony-button-grey" />
 </form>
